@@ -1,4 +1,6 @@
 public class Car {
+    private Mirror mirror;
+    private Wheels wheels;
     private Engine engine;
     private int fuelAmount;
     private int fuelConsumption;
@@ -7,19 +9,21 @@ public class Car {
     private String color;
 
 
+
     //Methoden
-    public Car(Engine engine, int fuelConsumption, Tank fuelAmount, String brand, String serialNumber){
+    public Car(Engine engine, int fuelConsumption, Tank fuelAmount, String brand, String serialNumber, Wheels wheels, Mirror mirror){
         this.engine = engine;
         this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.fuelAmount = fuelAmount.getFuelAmount();
-
+        this.wheels = wheels;
+        this.mirror = mirror;
     }
 
 
     public void attributes(){
-        System.out.println("Horsepower: " + engine.getHorsePower() + '\n' + "Fuel Consumption: " + this.fuelConsumption + '\n' + "Fuel Amount: " + fuelAmount);
+        System.out.println("Horsepower: " + engine.getHorsePower() + '\n' + "Fuel Consumption: " + this.fuelConsumption + '\n' + "Fuel Amount: " + fuelAmount + '\n' + "Wheels info: " + wheels.getWheels()+ '\n' + "Mirror size: " + mirror.getMirrorSize());
     }
 
     public void drive(int speed){
